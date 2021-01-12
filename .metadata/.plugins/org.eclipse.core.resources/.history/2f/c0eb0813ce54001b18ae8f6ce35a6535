@@ -1,0 +1,11 @@
+package com.vienmv.dao;
+
+import java.util.ArrayList;
+
+import com.vienmv.model.Review;
+
+public interface ReviewDao {
+	ArrayList<Review> getListReviewByProduct(int productId);
+	Review getReview(int reviewId);
+	boolean insertReview(Review c);
+}
