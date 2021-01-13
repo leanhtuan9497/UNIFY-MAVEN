@@ -1,6 +1,5 @@
 package com.leanhtuan.controller.admin;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -17,14 +16,15 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.leanhtuan.model.Category;
-import com.leanhtuan.model.User;
 import com.leanhtuan.service.CategoryService;
-import com.leanhtuan.service.UserService;
 import com.leanhtuan.service.impl.CategoryServiceImpl;
-import com.leanhtuan.service.impl.UserServiceImpl;
 
-@WebServlet(urlPatterns = { "/admin/cate/add" })
+@WebServlet(urlPatterns = { "/admin/category/add" })
 public class CategoryAddController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	CategoryService cateService = new CategoryServiceImpl();
 
 	@Override
@@ -35,16 +35,27 @@ public class CategoryAddController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
-		
-	
 		Category category = new Category();
-		category.setName(name);
+		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+
+		try {
+			List<FileItem> items = servletFileUpload.parseRequest(req);
+			for (FileItem item : items) {
+				if (item.getFieldName().equals("name")) {
+					category.setName(item.getString());
+				}
+				String name = req.getParameter("name");
+			}
+//			category.setName(name);
+			cateService.insert(category);
+			resp.sendRedirect(req.getContextPath() + "/admin/category/list");
+		} catch (FileUploadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		
-
-		cateService.insert(category);
-
-		resp.sendRedirect(req.getContextPath() + "/admin/category/list");
 
 	}
 }

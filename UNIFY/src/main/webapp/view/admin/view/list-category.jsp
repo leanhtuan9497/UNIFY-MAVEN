@@ -36,15 +36,15 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2>All Category</h2>
-						<h5>You can management category in here</h5>
+						<h5>You can management categories in here</h5>
 					</div>
 
 					<div class="row">
 						<div class="col-md-4">
 							<a class="btn btn-primary"
-								href="<c:url value='/admin/product/add'/>" role="button"
+								href="<c:url value='/admin/category/add'/>" role="button"
 								style="margin-left: 18px">+ Add</a> <a class="btn btn-primary"
-								href="<c:url value='/admin/product/add-category'/>" role="button"
+								href="<c:url value='/admin/category/add'/>" role="button"
 								style="margin-left: 3px"> <span><i
 									class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span></span>Print
 							</a>
@@ -67,22 +67,19 @@
 											<thead>
 												<tr>
 													<th>Category</th>
-													<th>Description</th>
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach items="${categories}" var="c">
+												<c:forEach items="${cateList}" var="cate">
 													<tr class="odd gradeX">
-														<td>${c.id }</td>
-														<td>${c.name }</td>
+														<td>${cate.name }</td>
 														<td><a
-															href="<c:url value='/product/detail?id=${pro.id }'/>"
+															href="<c:url value='/category/detail?id=${cate.id }'/>"
 															class="center">Detail</a> | <a
-															href="<c:url value='/admin/product/edit?id=${pro.id }'/>"
+															href="<c:url value='/admin/category/edit?id=${cate.id }'/>"
 															class="center">Edit</a> | <a
-															href="<c:url value='/admin/product/delete?id=${pro.id }'/>"
+															href="<c:url value='/admin/category/delete?id=${cate.id }'/>"
 															class="center">Delete</a></td>
-
 													</tr>
 												</c:forEach>
 

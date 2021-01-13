@@ -70,7 +70,7 @@ public class ProductEditController extends HttpServlet {
 					product.setPrice(Long.parseLong(item.getString()));
 				} else if (item.getFieldName().equals("image")) {
 					if (item.getSize() > 0) {// neu co file d
-						final String dir = "F:\\upload";
+						final String dir = "G:\\UNIFY-MAVEN\\UNIFY\\src\\main\\resources\\images";
 						String originalFileName = item.getName();
 						int index = originalFileName.lastIndexOf(".");
 						String ext = originalFileName.substring(index + 1);

@@ -18,6 +18,10 @@ import com.leanhtuan.service.impl.CategoryServiceImpl;
 import com.leanhtuan.service.impl.ProductServiceImpl;
 @WebServlet(urlPatterns="/product/detail")
 public class ProductDetailController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ProductService productService = new ProductServiceImpl();
 	CategoryService categoryService = new CategoryServiceImpl();
 	@Override

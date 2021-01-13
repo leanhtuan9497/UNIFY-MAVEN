@@ -28,7 +28,7 @@
 
 			<li><a
 				href="${pageContext.request.contextPath }/admin/category/list"><i
-					class="fa fa-sitemap fa-3x"></i> <span class="fa arrow"></span></a></li>
+					class="fa fa-sitemap fa-3x"></i>Category Management</a></li>
 			<!-- <ul class="nav nav-second-level">
 							<li><a href="#">Second Level Link</a></li>
 							<li><a href="#">Second Level Link</a></li>

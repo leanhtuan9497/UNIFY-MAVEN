@@ -1,13 +1,7 @@
 package com.leanhtuan.controller;
 
 import java.io.IOException;
-import java.security.MessageDigest;
-import java.sql.Date;
-import java.util.List;
 import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +23,10 @@ import com.leanhtuan.util.RandomUUID;
 
 @WebServlet(urlPatterns = "/member/order")
 public class OrderController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	UserService userService = new UserServiceImpl();
 	CartService cartService = new CartServiceImpl();
 	CartItemService cartItemService = new CartServiceItemImpl();
