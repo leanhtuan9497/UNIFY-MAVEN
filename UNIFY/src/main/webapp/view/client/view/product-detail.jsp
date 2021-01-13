@@ -288,7 +288,10 @@
 
 					<!-- Reviews -->
 					<div class="tab-pane fade" id="reviews">
+					
+					
 						<div class="product-comment margin-bottom-40">
+							
 							<div class="product-comment-in">
 								<img class="product-comment-img rounded-x"
 									src="${url}/img/team/01.jpg" alt="">
@@ -311,8 +314,41 @@
 										</li>
 									</ul>
 								</div>
+								
 							</div>
+							
+							<c:forEach items="${reviews}" var="review">
+								<div class="product-comment-in">
+								<img class="product-comment-img rounded-x"
+									src="${url}/img/team/01.jpg" alt="">
+								<div class="product-comment-dtl">
+									<h4>
+										${review.username} <small>22 days ago</small>
+									</h4>
+									<p>${review.reviewMess}</p>
+									<ul class="list-inline product-ratings">
+										<li class="reply"><a href="#">Reply</a></li>
+										<li class="pull-right">
+											<ul class="list-inline">
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating fa fa-star"></i></li>
+												<li><i class="rating fa fa-star"></i></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+								
+							</c:forEach>
+							
 						</div>
+						
+					
+						
+						
 						<h3 class="heading-md margin-bottom-30">Add a review</h3>
 						<form action="${url}/php/demo-contacts-process.php" method="post"
 							id="sky-form3" class="sky-form sky-changes-4">
