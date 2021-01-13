@@ -29,10 +29,11 @@ public class ReviewDaoImpl extends JDBCConnection implements ReviewDao {
 	           review.setReviewID(rs.getInt("review_id"));
 	           review.setProductID(rs.getInt("product_id"));
 	           review.setEmail(rs.getString("email"));
-	           review.setStars(rs.getInt("review_star"));
+	           review.setStars(rs.getInt("stars"));
 	           review.setReviewMess(rs.getString("review_message"));
 	           list.add(review);
 	        }
+	     //   System.out.write(list.size());
 	        return list;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
