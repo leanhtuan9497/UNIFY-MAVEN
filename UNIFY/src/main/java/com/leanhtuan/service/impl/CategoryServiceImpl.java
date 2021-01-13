@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public List<Category> search(String username) {
-		return categoryDao.search(username);
+	public List<Category> search(String name) {
+		return categoryDao.search(name);
 	}
 }

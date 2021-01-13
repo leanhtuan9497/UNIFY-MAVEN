@@ -74,8 +74,6 @@
 													<tr class="odd gradeX">
 														<td>${cate.name }</td>
 														<td><a
-															href="<c:url value='/category/detail?id=${cate.id }'/>"
-															class="center">Detail</a> | <a
 															href="<c:url value='/admin/category/edit?id=${cate.id }'/>"
 															class="center">Edit</a> | <a
 															href="<c:url value='/admin/category/delete?id=${cate.id }'/>"
